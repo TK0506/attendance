@@ -27,6 +27,7 @@ export default class Attendance extends React.Component {
                 <Cards
                     members={this.state.members}
                     color={this.state.color}
+                    memberName={this.state.memberName}
                     clickButton={(num, attend) => this.handleShow(num, attend)}
                 />
                 </div>
@@ -76,6 +77,8 @@ export default class Attendance extends React.Component {
 
     // モダールを閉じる
     handleClose = () => {
-        this.setState({ show: false, color: 'primary' });
+        console.log(this.state.memberName);
+        const attendColor = this.state.attended > 0 ? 'secondary' : 'primary';
+        this.setState({ show: false, color: attendColor });
     };
 };

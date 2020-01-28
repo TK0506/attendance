@@ -6,7 +6,7 @@ export default class Cards extends React.Component {
         const memberCard = this.props.members.map(member => {
             return (
                 <Card
-                    bg={this.props.color}
+                    bg={this.props.memberName === member.name ? this.props.color : 'secondary'}
                     text='white'
                     style={{ width: '18rem' }}
                     key={member.id}
